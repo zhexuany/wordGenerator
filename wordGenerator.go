@@ -57,7 +57,7 @@ func GetWords(num int, maxLen int) []string {
 	s := rand.NewSource(time.Now().UnixNano())
 	r := rand.New(s)
 	for i := 0; i < num; i++ {
-		strs = append(strs, GetWord(r.Intn(maxLen)))
+		strs = append(strs, GetWord(r.Intn(maxLen)+1))
 	}
 
 	return strs
