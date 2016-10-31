@@ -10,13 +10,14 @@ type WordGenerator struct {
 	indexGenerator *rand.Rand
 }
 
-func New() *WordGenerator {
-	wordGenerator := &WordGenerator{
+var wordGenerator *WordGenerator
+
+func init() {
+	wordGenerator = &WordGenerator{
 		alphabets:      getAlphabets(),
 		indexGenerator: getDefaultRand(),
 	}
 
-	return wordGenerator
 }
 
 func getAlphabets() []rune {
@@ -38,25 +39,25 @@ func getDefaultRand() *rand.Rand {
 	return r
 }
 
-func (w *WordGenerator) GetChar() string {
-	return string(w.alphabets[w.indexGenerator.Intn(len(w.alphabets))])
+func GetChar() string {
+	return string(wordGenerator.alphabets[wordGenerator.indexGenerator.Intn(len(wordGenerator.alphabets))])
 }
 
-func (w *WordGenerator) GetWord(length int) string {
+func GetWord(length int) string {
 	str := ""
 	for i := 0; i < length; i++ {
-		str += w.GetChar()
+		str += GetChar()
 	}
 
 	return str
 }
 
-func (w *WordGenerator) GetWords(num int, maxLen int) []string {
+func GetWords(num int, maxLen int) []string {
 	strs := make([]string, num)
 	s := rand.NewSource(time.Now().UnixNano())
 	r := rand.New(s)
 	for i := 0; i < num; i++ {
-		strs = append(strs, w.GetWord(r.Intn(maxLen)))
+		strs = append(strs, GetWord(r.Intn(maxLen)))
 	}
 
 	return strs
