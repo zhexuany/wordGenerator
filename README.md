@@ -13,11 +13,13 @@ in order to test the correctness of anohter project that I am working on.
 
 ~~~go
 func foo() {
-    w := wordGenerator.New()
-    ch := w.GetChar()
+    ch := wordGenerator.GetChar()
     // 5 is the length of word
-    str := w.GetWord(5)
+    str := wordGenerator.GetWord(5)
     // 5 is the number of word, 20 is the maximum length of word
-    strs := w.GetWords(5, 20)
+    strs := wordGenerator.GetWords(5, 20)
 }
 ~~~
+
+### Future work
+- [ ] add necessay comments
