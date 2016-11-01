@@ -39,10 +39,12 @@ func getDefaultRand() *rand.Rand {
 	return r
 }
 
+//GetChar will return a single character from Alphabets
 func GetChar() string {
 	return string(wordGenerator.alphabets[wordGenerator.indexGenerator.Intn(len(wordGenerator.alphabets))])
 }
 
+//GetWord will return a word whose length is defined by parameter
 func GetWord(length int) string {
 	str := ""
 	for i := 0; i < length; i++ {
@@ -52,12 +54,13 @@ func GetWord(length int) string {
 	return str
 }
 
+//GetWords will return a slice of string.
 func GetWords(num int, maxLen int) []string {
 	strs := make([]string, num)
 	s := rand.NewSource(time.Now().UnixNano())
 	r := rand.New(s)
 	for i := 0; i < num; i++ {
-		strs = append(strs, GetWord(r.Intn(maxLen)+1))
+		strs[i] = GetWord(r.Intn(maxLen) + 1)
 	}
 
 	return strs
