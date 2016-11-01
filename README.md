@@ -1,4 +1,4 @@
-##Word Generator
+#Word Generator
 It is just an implementation for generating randomized character, word and words. 
 The goal of creating such project is that I need generate a lot of random hash key 
 in order to test the correctness of anohter project that I am working on. 
@@ -21,5 +21,9 @@ func foo() {
 }
 ~~~
 
-### Future work
-- [ ] add necessay comments
+## Dependency
+This project is built and tested under `Go` 1.7. Other `Go` version  may not supported yet. Other than `GO` itself,
+this project does not have any deoendency.
+
+## Future work
+- [ ] support Non-ascii such Chinese and Japanese
