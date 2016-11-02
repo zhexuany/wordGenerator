@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/zhexuany/wordGenerator.png?branch=master)](https://travis-ci.org/zhexuany/wordGenerator)
+[![GoDoc](https://godoc.org/github.com/zhexuany/wordGenerator?status.svg)](https://godoc.org/github.com/zhexuany/wordGenerator)
 #Word Generator
 It is just an implementation for generating randomized character, word and words. 
 The goal of creating such project is that I need generate a lot of random hash key 
